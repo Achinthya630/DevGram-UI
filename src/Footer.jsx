@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = () => {      
   return (
     <div className="relative">
       {/* <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 absolute -bottom-200"> */}
