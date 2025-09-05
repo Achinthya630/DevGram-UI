@@ -1,18 +1,19 @@
-import React from 'react'
-import NavBar from './NavBar'
-import { Outlet } from 'react-router-dom'
-import Footer from './Footer'
+import React from "react";
+import NavBar from "./NavBar";
+import { Outlet } from "react-router-dom";
+import Footer from "./Footer";
 
 const Body = () => {
   return (
     <div>
-        <html data-theme="dracula"></html>
-        <NavBar />
+      {/* <div data-theme="coffee"></div> */}
+      <NavBar />
+      <main className="flex-grow">
         <Outlet />
-        <Footer />
-        <div></div>
+      </main>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Body
+export default Body;

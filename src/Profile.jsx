@@ -4,6 +4,7 @@ const Profile = () => {
   return (
     <div className='h-300'>
       Profile
+      <input type='text' placeholder='enter here'></input>
     </div>
   )
 }

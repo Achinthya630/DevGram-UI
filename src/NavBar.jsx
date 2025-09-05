@@ -5,7 +5,7 @@ const NavBar = () => {
     <div>
       <div className="navbar bg-base-300 shadow-sm">
         <div className="navbar-start">
-          <div className="dropdown">
+          {/* <div className="dropdown">
             <div
               tabIndex={0}
               role="button"
@@ -42,11 +42,12 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
+        </div> */}
         </div>
         <div className="navbar-center">
           <a className="btn btn-ghost text-xl justify-center">
-            <div class="text text-info -mr-1.5">Dev</div>
-            <div class="text ml-0">Gram</div>
+            <div className="text text-info -mr-1.5">Dev</div>
+            <div className="text ml-0">Gram</div>
           </a>
         </div>
         <div className="navbar-end">
