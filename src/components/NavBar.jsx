@@ -1,9 +1,30 @@
+import axios from "axios";
 import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { BASE_URL } from "../utils/constants";
+import { removeUser } from "../utils/userSlice";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const logoutHandler = async () => {
+    try {
+      await axios.post(
+        BASE_URL + "/logout",
+        {},
+        {
+          withCredentials: true,
+        }
+      );
+      dispatch(removeUser());
+      return navigate("/login");
+    } catch (error) {
+      console.log("Error loggin out");
+    }
+  };
 
   return (
     <div>
@@ -51,7 +72,7 @@ const NavBar = () => {
         <div className="navbar-center">
           <Link to={"/"} className="btn btn-ghost text-xl justify-center">
             <div className="text text-info -mr-1.5">Dev</div>
-            <div className="text ml-0">Gram</div>
+            <div className="text-white ml-0 ">Gram</div>
           </Link>
         </div>
         <div className="navbar-end">
@@ -84,10 +105,7 @@ const NavBar = () => {
                   className="btn btn-ghost btn-circle avatar"
                 >
                   <div className="w-10 rounded-full">
-                    <img
-                      alt="Profile Photo"
-                      src={user.photoUrl}
-                    />
+                    <img alt="Profile Photo" src={user.photoUrl} />
                   </div>
                 </div>
                 <ul
@@ -104,7 +122,7 @@ const NavBar = () => {
                     <a>Settings</a>
                   </li>
                   <li>
-                    <a>Logout</a>
+                    <a onClick={logoutHandler}>Logout</a>
                   </li>
                 </ul>
               </div>

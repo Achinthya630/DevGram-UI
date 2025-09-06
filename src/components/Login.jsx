@@ -8,6 +8,7 @@ import { BASE_URL } from "../utils/constants";
 const Login = () => {
   const [emailID, setEmailId] = useState("achinthyaka@gmail.com");
   const [password, setPassword] = useState("Achinthya@123");
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -25,7 +26,8 @@ const Login = () => {
       dispatch(addUser(res.data));
       return navigate("/");
     } catch (error) {
-      document.getElementById("status-message").innerHTML = error.response.data;
+      setError(error?.response?.data || "Something went wrong");
+      //document.getElementById("status-message").innerHTML = error.response.data;
     }
   };
 
@@ -44,7 +46,7 @@ const Login = () => {
               onChange={(e) => setEmailId(e.target.value)}
             />
           </fieldset>
-          <fieldset className="fieldset mb-10">
+          <fieldset className="fieldset ">
             <legend className="fieldset-legend">Password</legend>
             <input
               type="password"
@@ -54,11 +56,10 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </fieldset>
-          <div
-            id="status-message"
-            className="text-error flex justify-center"
-          ></div>
-          <div className="card-actions justify-center">
+          <div id="status-message" className="text-error flex justify-center">
+            {error}
+          </div>
+          <div className="card-actions justify-center mt-10">
             <button className="btn btn-primary" onClick={loginHandler}>
               Login
             </button>
