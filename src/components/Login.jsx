@@ -25,7 +25,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       return navigate("/");
     } catch (error) {
-      console.log("error:" + error.message);
+      document.getElementById("status-message").innerHTML = error.response.data;
     }
   };
 
@@ -54,7 +54,10 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </fieldset>
-
+          <div
+            id="status-message"
+            className="text-error flex justify-center"
+          ></div>
           <div className="card-actions justify-center">
             <button className="btn btn-primary" onClick={loginHandler}>
               Login
