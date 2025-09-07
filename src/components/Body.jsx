@@ -33,7 +33,6 @@ const Body = () => {
 
   return (
     <div>
-      {/* <div data-theme="coffee"></div> */}
       <NavBar />
       <main className="flex-grow">
         <Outlet />

@@ -70,10 +70,20 @@ const NavBar = () => {
         </div> */}
         </div>
         <div className="navbar-center">
-          <Link to={"/"} className="btn btn-ghost text-xl justify-center">
-            <div className="text text-info -mr-1.5">Dev</div>
-            <div className="text-white ml-0 ">Gram</div>
-          </Link>
+          {user ? (
+            <Link to={"/"} className="btn btn-ghost text-xl justify-center">
+              <div className="text text-info -mr-1.5">Dev</div>
+              <div className="text-white ml-0 ">Gram</div>
+            </Link>
+          ) : (
+            <Link
+              to={"/login"}
+              className="btn btn-ghost text-xl justify-center"
+            >
+              <div className="text text-info -mr-1.5">Dev</div>
+              <div className="text-white ml-0 ">Gram</div>
+            </Link>
+          )}
         </div>
         <div className="navbar-end">
           {user && (
