@@ -32,7 +32,7 @@ const Feed = () => {
     (
       <>
 
-        <UserCard user={feed[3]} />
+        <UserCard user={feed[2]} />
       </>
     )
   );
