@@ -18,6 +18,7 @@ const EditProfile = ({ user }) => {
   const [updatedSucess, setUpdateSuccess] = useState("");
   const dispatch = useDispatch();
   const gender = user.gender;
+  
   const handleSkillInput = (e) => {
     if (e.key === "Enter" && currentSkill.trim()) {
       e.preventDefault(); // Prevent form submission
