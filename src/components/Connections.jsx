@@ -27,7 +27,13 @@ const Connections = () => {
   }, []);
 
   if (!connections) return;
-  if (connections.length == 0) return <div>No Connections found</div>;
+  if (connections.length == 0) {
+    return (
+      <div className="flex justify-center mt-15 my-120 text-2xl">
+        No Connections found
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center max-w-3xl mx-auto px-4">
@@ -46,7 +52,7 @@ const Connections = () => {
                   {connection.firstName} {connection.lastName}
                 </h2>
                 <p>
-                    {connection.age}, {connection.gender}
+                  {connection.age}, {connection.gender}
                 </p>
               </div>
             </div>

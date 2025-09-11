@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="relative">
       {/* <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 absolute -bottom-200"> */}
-        <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 mt-auto">
+        <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 ">
         <aside>
           <svg
             width="50"

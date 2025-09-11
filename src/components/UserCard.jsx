@@ -1,7 +1,7 @@
 import React from "react";
 
 const UserCard = ({ user }) => {
-  //   console.log(user);
+    console.log(user);
   const { firstName, lastName, age, gender, about, skills } = user;
   return (
     <div className="flex justify-center">
@@ -12,7 +12,7 @@ const UserCard = ({ user }) => {
         <div className="card-body">
           <h2 className="card-title">{firstName + " " + lastName}</h2>
           <p>
-            {age}, {gender}
+            {age + ", " + gender}
           </p>
           <p>{about}</p>
           <div className="card-actions justify-items-start mt-5">

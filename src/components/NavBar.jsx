@@ -1,12 +1,15 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 import { removeUser } from "../utils/userSlice";
+import { removeRequests } from "../utils/requestSlice";
 
 const NavBar = () => {
+  // Remove pendingRequestCount from props since we'll use Redux directly
   const user = useSelector((store) => store.user);
+  const requests = useSelector((store) => store.requests);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,6 +23,7 @@ const NavBar = () => {
         }
       );
       dispatch(removeUser());
+      dispatch(removeRequests());
       return navigate("/login");
     } catch (error) {
       console.log("Error loggin out");
@@ -97,15 +101,18 @@ const NavBar = () => {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    {" "}
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
                       d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                    />{" "}
+                    />
                   </svg>
-                  {/* <span className="badge badge-xs badge-primary indicator-item"></span> */}
+                  {requests && requests.length > 0 && (
+                    <span className="badge badge-xs badge-primary indicator-item">
+                      {requests.length}
+                    </span>
+                  )}
                 </Link>
               </button>
               <div className="dropdown dropdown-end">
