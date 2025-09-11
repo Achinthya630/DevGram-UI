@@ -38,7 +38,7 @@ const Connections = () => {
   return (
     <div className="flex flex-col items-center max-w-3xl mx-auto px-4">
       <div className="text-2xl text-center my-6">My Connections</div>
-      {connections.map((connection) => (
+      {/* {connections.map((connection) => (
         <div className="card bg-base-300 w-full shadow-sm my-3">
           <div className="card-body">
             <div className="flex justify-evenly">
@@ -58,7 +58,50 @@ const Connections = () => {
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
+      {connections.map((connection) => (
+              <div
+                
+                className="bg-base-300 border-base-300 collapse border w-180 mb-2"
+              >
+                <input type="checkbox" className="peer" />
+                <div className="collapse-title bg-base-300 peer-checked:bg-secondary peer-checked:text-secondary-content">
+                  <div className="flex justify-between">
+                    <div className="flex">
+                      <div className="btn-ghost btn-circle avatar">
+                        <div className="w-25 rounded-full">
+                          <img
+                            alt="Profile Photo"
+                            src={connection.photoUrl}
+                          />
+                        </div>
+                      </div>
+                      <div className="ml-5">
+                        <h2 className="card-title mt-3">
+                          {connection.firstName}{" "}
+                          {connection.lastName}
+                        </h2>
+                        <p>
+                          {connection.age}, {connection.gender}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="collapse-content bg-primary text-primary-content peer-checked:bg-secondary peer-checked:text-secondary-content">
+                  <p>{connection.about}</p>
+                  <div className="card-actions justify-items-start mt-5">
+                    {connection.skills &&
+                      connection.skills.map((skill, index) => (
+                        <div key={index} className="badge badge-outline">
+                          {skill}
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div className="mb-70 "></div>
     </div>
   );
 };
