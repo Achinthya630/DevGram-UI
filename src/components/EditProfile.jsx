@@ -18,7 +18,7 @@ const EditProfile = ({ user }) => {
   const [updatedSucess, setUpdateSuccess] = useState("");
   const dispatch = useDispatch();
   const gender = user.gender;
-  
+
   const handleSkillInput = (e) => {
     if (e.key === "Enter" && currentSkill.trim()) {
       e.preventDefault(); // Prevent form submission
@@ -34,23 +34,41 @@ const EditProfile = ({ user }) => {
   };
 
   const saveProfile = async () => {
+    setError("");
     try {
       const res = await axios.patch(
         BASE_URL + "/profile/edit",
         { firstName, lastName, age, about, photoUrl, skills },
         { withCredentials: true }
       );
-      console.log("Response from server:", res.data);
-      dispatch(addUser(res.data.data));
-      setError("");
+      // console.log("Response from server:", res.data);
+      dispatch(addUser(res?.data?.data));
+
+      
       setUpdateSuccess("true");
+
       setTimeout(() => {
         setUpdateSuccess("");
       }, 3000);
+      setTimeout(() => {
+        location.reload()
+      }, 3000);
+      // location.reload();
     } catch (error) {
       setError(error?.response?.data || "Something went wrong");
     }
   };
+
+
+  //   React.useEffect(() => {
+  //   setFirstName(user.firstName);
+  //   setLastName(user.lastName);
+  //   setAge(user.age);
+  //   setAbout(user.about);
+  //   setPhotoUrl(user.photoUrl);
+  //   setSkills(user.skills || []);
+  // }, [user]);
+
 
   return (
     <>

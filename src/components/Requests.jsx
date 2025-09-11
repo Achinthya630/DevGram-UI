@@ -155,7 +155,7 @@ const Requests = () => {
           </div>
         )}
       </div>
-      <div className="mb-50 mt-50"></div>
+      <div className="mb-70"></div>
     </>
   );
 };
