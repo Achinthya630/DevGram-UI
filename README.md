@@ -24,20 +24,20 @@ npm (comes with Node.js)
 ## Installation
 Clone the repository:
 
-``` git clone [https://github.com/your-username/devgram-ui.git](https://github.com/your-username/devgram-ui.git)
+``` git clone [https://github.com/your-username/devgram-ui.git](https://github.com/your-username/devgram-ui.git) ```
 
 Navigate to the project directory:
 
-``` cd devgram-ui
+``` cd devgram-ui ```
 
 Install the dependencies:
 
-``` npm install
+``` npm install ```
 
 Running the Application
 After the installation is complete, you can start the development server:
 
-npm start
+``` npm start ```
 
 This command will run the app in development mode. Open http://localhost:3000 to view it in your browser. The page will automatically reload as you make changes.
 
@@ -48,26 +48,26 @@ Fork the repository.
 
 Create a new branch for your feature or bug fix.
 
-git checkout -b feature/your-feature-name
+``` git checkout -b feature/your-feature-name```
 
 Commit your changes:
 
-git commit -m "feat: Add new feature"
+```git commit -m "feat: Add new feature"```
 
 Push to your branch:
 
-git push origin feature/your-feature-name
+``` git push origin feature/your-feature-name ```
 
 Open a pull request to the main branch of this repository.
 
 ## Technologies Used
-Frontend: React, Tailwind CSS, JavaScript, DaisyUI
+ - Frontend: React, Tailwind CSS, JavaScript, DaisyUI
 
-State Management: Redux 
+ - State Management: Redux 
 
-API Integration: Axios
+ - API Integration: Axios
 
-Build Tool: Vite 
+ - Build Tool: Vite 
 
 ## Contact
 If you have any questions or feedback, feel free to reach out to the project maintainers.
