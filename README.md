@@ -1,12 +1,75 @@
-# React + Vite
+# DevGram: The Developer's Social Network
+DevGram is a social media platform designed exclusively for developers. Our mission is to provide a space where coders can connect, share knowledge, showcase their projects, and grow their professional network.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+Developer Profiles: Create a professional profile highlighting your skills, projects, and tech stack.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow & Connect: Build your network by following other developers and connecting with peers in your field.
 
-## Expanding the ESLint configuration
+Feed: A personalized feed of posts from the developers and topics you follow.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+## Getting Started
+This repository contains the frontend of the DevGram application. To get the project up and running on your local machine, follow these steps.
+
+Prerequisites
+Make sure you have the following installed:
+
+Node.js (LTS version recommended)
+
+npm (comes with Node.js)
+
+## Installation
+Clone the repository:
+
+git clone [https://github.com/your-username/devgram-ui.git](https://github.com/your-username/devgram-ui.git)
+
+Navigate to the project directory:
+
+cd devgram-ui
+
+Install the dependencies:
+
+npm install
+
+Running the Application
+After the installation is complete, you can start the development server:
+
+npm start
+
+This command will run the app in development mode. Open http://localhost:3000 to view it in your browser. The page will automatically reload as you make changes.
+
+## Contributing
+We welcome contributions from the community! If you'd like to contribute, please follow these steps:
+
+Fork the repository.
+
+Create a new branch for your feature or bug fix.
+
+git checkout -b feature/your-feature-name
+
+Commit your changes:
+
+git commit -m "feat: Add new feature"
+
+Push to your branch:
+
+git push origin feature/your-feature-name
+
+Open a pull request to the main branch of this repository.
+
+## Technologies Used
+Frontend: React, Tailwind CSS, JavaScript, DaisyUI
+
+State Management: Redux 
+
+API Integration: Axios
+
+Build Tool: Vite 
+
+## Contact
+If you have any questions or feedback, feel free to reach out to the project maintainers.
+
+## DevGram - Connect. Code. Collaborate.
