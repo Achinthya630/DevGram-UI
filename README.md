@@ -24,15 +24,15 @@ npm (comes with Node.js)
 ## Installation
 Clone the repository:
 
-git clone [https://github.com/your-username/devgram-ui.git](https://github.com/your-username/devgram-ui.git)
+``` git clone [https://github.com/your-username/devgram-ui.git](https://github.com/your-username/devgram-ui.git)
 
 Navigate to the project directory:
 
-cd devgram-ui
+``` cd devgram-ui
 
 Install the dependencies:
 
-npm install
+``` npm install
 
 Running the Application
 After the installation is complete, you can start the development server:
