@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 import { removeUser } from "../utils/userSlice";
 import { removeRequests } from "../utils/requestSlice";
+import { removeFeed } from "../utils/feedSlice";
 
 const NavBar = () => {
   // Remove pendingRequestCount from props since we'll use Redux directly
@@ -24,6 +25,7 @@ const NavBar = () => {
       );
       dispatch(removeUser());
       dispatch(removeRequests());
+      dispatch(removeFeed());
       return navigate("/login");
     } catch (error) {
       console.log("Error loggin out");

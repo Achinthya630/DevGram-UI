@@ -1,8 +1,33 @@
+import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { removeUserFromFeed } from "../utils/feedSlice";
 
 const UserCard = ({ user }) => {
-  // console.log(user);
-  const { firstName, lastName, age, gender, about, skills } = user;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleSendRequest = async (status, _id) => {
+    try {
+      const res = axios.post(
+        BASE_URL + "/request/send/" + status + "/" + _id,
+        {},
+        { withCredentials: true }
+      );
+      dispatch(removeUserFromFeed(_id));
+    } catch (error) {
+      navigate("*");
+    }
+  };
+
+  const { firstName, lastName, age, gender, about, skills, _id, profilePage } = user;
+  let showButtons = true;
+  if(profilePage){
+    showButtons = false;
+  } 
+
   return (
     <div className="flex justify-center">
       <div className="card bg-base-200 w-96 shadow-sm mb-10 mt-8">
@@ -21,11 +46,25 @@ const UserCard = ({ user }) => {
                 </div>
               ))}
           </div>
-
-          <div className="card-actions justify-end">
-            <button className="btn btn-error">Skip</button>
-            <button className="btn btn-success">Interested</button>
-          </div>
+              {showButtons && 
+          <div className="card-actions justify-end mt-5">
+            <button
+              className="btn btn-error"
+              onClick={() => {
+                handleSendRequest("ignored", _id);
+              }}
+            >
+              Skip
+            </button>
+            <button
+              className="btn btn-success"
+              onClick={() => {
+                handleSendRequest("interested", _id);
+              }}
+            >
+              Interested
+            </button>
+          </div>}
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ const Feed = () => {
   const feed = useSelector((store) => store.feed);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const showButtons = true;
 
   const getFeed = async () => {
     if (feed) return;
@@ -26,6 +27,11 @@ const Feed = () => {
   useEffect(() => {
     getFeed();
   }, []);
+
+  if(!feed) return;
+  if(feed.length <= 0) return (
+    <div className="flex justify-center my-20 mb-120">No new users found</div>
+  );
 
   return (
     feed && 

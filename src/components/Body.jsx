@@ -17,6 +17,8 @@ const Body = () => {
   const fetchUser = async () => {
     try {
       if (userData) return;
+      const publicPaths = ["/signup", "/login", "/notfound"];
+      if (publicPaths.includes(location.pathname)) return;
       const user = await axios.get(BASE_URL + "/profile/view", {
         withCredentials: true,
       });

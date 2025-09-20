@@ -18,7 +18,7 @@ const EditProfile = ({ user }) => {
   const [updatedSucess, setUpdateSuccess] = useState("");
   const dispatch = useDispatch();
   const gender = user.gender;
-
+  const profilePage = true;
   const handleSkillInput = (e) => {
     if (e.key === "Enter" && currentSkill.trim()) {
       e.preventDefault(); // Prevent form submission
@@ -94,7 +94,7 @@ const EditProfile = ({ user }) => {
         <div className="mr-20">
           {user && (
             <UserCard
-              user={{ firstName, lastName, age, about, photoUrl, skills, gender }}
+              user={{ firstName, lastName, age, about, photoUrl, skills, gender, profilePage }}
             />
           )}
         </div>
